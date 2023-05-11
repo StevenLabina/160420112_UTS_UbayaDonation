@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/donation_navigation"
+    app:startDestination="@id/itemListDonation">
+
+    <fragment
+        android:id="@+id/itemListDonation"
+        android:name="com.example.a160420112_uts.view.ListDonationFragment"
+        android:label="fragment_list_donation"
+        tools:layout="@layout/fragment_list_donation">
+        <action
+            android:id="@+id/actionDetailDonation"
+            app:destination="@id/detailDonationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailDonationFragment"
+        android:name="com.example.a160420112_uts.view.DetailDonationFragment"
+        android:label="DetailDonation"
+        tools:layout="@layout/fragment_detail_donation">
+        <action
+            android:id="@+id/actionDonation"
+            app:destination="@id/donationFragment" />
+        <argument android:name="donation_id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/donationFragment"
+        android:name="com.example.a160420112_uts.view.DonationFragment"
+        android:label="fragment_donation"
+        tools:layout="@layout/fragment_donation">
+        <action
+            android:id="@+id/actionListDonation"
+            app:destination="@id/itemListDonation" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemAkun"
+        android:name="com.example.a160420112_uts.view.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
+    <fragment
+        android:id="@+id/itemInbox"
+        android:name="com.example.a160420112_uts.view.InboxFragment"
+        android:label="InboxFragment"
+        tools:layout="@layout/inbox_item">
+        <action
+            android:id="@+id/actionDetailInbox"
+            app:destination="@id/detailInboxFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemTutorial"
+        android:name="com.example.a160420112_uts.view.TutorialFragment"
+        android:label="TutorialFragment"
+        tools:layout="@layout/fragment_tutorial"/>
+    <fragment
+        android:id="@+id/itemLogin"
+        android:name="com.example.a160420112_uts.view.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_itemLogin_to_itemListDonation"
+            app:destination="@id/itemListDonation" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemTrending"
+        android:name="com.example.a160420112_uts.view.TrendingNewsFragment"
+        android:label="TrendingNewsFragment"
+        tools:layout="@layout/fragment_trending_news">
+        <action
+            android:id="@+id/actionDetailNews"
+            app:destination="@id/detailTrendingNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailInboxFragment"
+        android:name="com.example.a160420112_uts.view.DetailInboxFragment"
+        android:label="fragment_detail_inbox"
+        tools:layout="@layout/fragment_detail_inbox" >
+        <argument
+            android:name="inbox_id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailTrendingNewsFragment"
+        android:name="com.example.a160420112_uts.view.DetailTrendingNewsFragment"
+        android:label="DetailTrendingNewsFragment"
+        tools:layout="@layout/fragment_detail_trending_news">
+        <argument android:name="news_id"
+            app:argType="string" />
+    </fragment>
+</navigation>
